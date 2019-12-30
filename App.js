@@ -1,12 +1,12 @@
 import { Provider } from 'react-redux';
 import React from 'react';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, ActivityIndicator, StyleSheet,Text } from 'react-native';
 import { PersistGate } from 'redux-persist/integration/react';
 import { colors } from './src/styles';
 
 import { store, persistor } from './src/redux/store';
 
-import AppView from './src/modules/AppViewContainer';
+// import AppView from './src/modules/AppViewContainer';
 
 export default function App() {
   return (
@@ -15,12 +15,13 @@ export default function App() {
         loading={
           // eslint-disable-next-line react/jsx-wrap-multilines
           <View style={styles.container}>
+            <Text>What popaing/></Text>
             <ActivityIndicator color={colors.red} />
           </View>
         }
         persistor={persistor}
       >
-        <AppView />
+        {/* <AppView /> */}
       </PersistGate>
     </Provider>
   );
